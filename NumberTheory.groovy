@@ -46,7 +46,7 @@ class NumberTheory
     def end = new Date()
     println "Total run time: " + TimeCategory.minus(end, start) + "\n"
 
-    println("Functional primes up to 20: ")
+    println "Functional primes up to 20: "
     start = new Date()
     println functionalPrime(20)
     end = new Date() 
