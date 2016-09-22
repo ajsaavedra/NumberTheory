@@ -28,14 +28,10 @@ class NumberTheory
     return perfectNumbers
   }
 
-  static int[] functionalPrime(int n)
+  static int[] primesUpTo(int n)
   {
-    def primes = []
-
     def primesUpTo = { x -> (1..x).findAll { x % it == 0}.size() == 2 }
-    (1..n).findAll { primesUpTo(it) }.each { primes << it }
-
-    return primes
+    return (1..n).findAll { primesUpTo(it) }.each { it }
   }
 
   static void main(String[] args)
@@ -46,9 +42,9 @@ class NumberTheory
     def end = new Date()
     println "Total run time: " + TimeCategory.minus(end, start) + "\n"
 
-    println "Functional primes up to 20: "
+    println "Primes up to 20: "
     start = new Date()
-    println functionalPrime(20)
+    println primesUpTo(20)
     end = new Date() 
     println "Total run time: " + TimeCategory.minus(end, start)
   }
